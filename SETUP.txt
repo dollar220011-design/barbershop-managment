@@ -1,0 +1,6 @@
+طريقة الرفع إلى GitHub:
+1) ارفع كل الملفات الموجودة في هذا المجلد إلى جذر Repository.
+2) لا ترفع ملف ZIP نفسه.
+3) الملفات المطلوبة في الجذر: index.html, main.jsx, styles.css, package.json, vite.config.js, README.md, SETUP.txt, .gitignore.
+4) النسخة الحالية لا تحتاج مجلد src.
+5) بعد الرفع يمكن تشغيلها عبر Vite أو إعداد GitHub Pages.
