@@ -2,7 +2,8 @@ name: Build Windows App
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -11,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,19 +21,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          - name: Setup Node
-  uses: actions/setup-node@v4
-  with:
-    node-version: 22
+
       - name: Install dependencies
         run: npm install
 
       - name: Build Windows installer
         run: npm run dist
 
-      - name: Upload installer
+      - name: Upload Windows installer
         uses: actions/upload-artifact@v4
         with:
           name: Barber-Shop-Management-Windows
-          path: release/*.exe
+          path: |
+            release/*.exe
+            dist/*.exe
           if-no-files-found: error
