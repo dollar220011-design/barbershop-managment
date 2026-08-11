@@ -1,24 +1,23 @@
-# Barbershop Management
+# Barber Shop Management — Windows
 
-نظام إدارة ومحاسبة لمحل حلاقة — نسخة أولى متكاملة للواجهة والعمليات الأساسية.
+Desktop version built with Electron.
 
-## المزايا
-- لوحة تحكم وإحصائيات مالية.
-- إدارة العمال ونسبة كل عامل.
-- إدارة الخدمات والأسعار.
-- إدارة الزبائن.
-- تسجيل الخدمات والمبيعات.
-- المصاريف.
-- الرواتب والدفعات.
-- تقارير مالية وتشغيلية.
-- بحث.
-- تعديل وحذف وإضافة.
-- نسخة احتياطية JSON.
-- حفظ تلقائي للبيانات داخل المتصفح.
-- تصميم عربي RTL ومتجاوب مع الهاتف والكمبيوتر.
+## Default login
+- Username: `admin`
+- Password: `1234`
 
-## التشغيل
+Change the password from **الإعدادات** after first login.
+
+## Build locally
+```bash
 npm install
-npm run dev
+npm start
+npm run dist
+```
 
-> ملاحظة: هذه النسخة تعمل محلياً باستخدام localStorage. ربط قاعدة بيانات سحابية وتسجيل دخول متعدد المستخدمين يحتاج خدمة Backend مثل Supabase/Firebase ومفاتيح المشروع.
+The Windows installer will be generated in `release/`.
+
+## GitHub
+The included GitHub Actions workflow builds the Windows `.exe` automatically on every push to `main`. Open **Actions**, select **Build Windows App**, and download the generated artifact from the completed run.
+
+Data is stored locally in the Windows user's Electron app-data folder, not in the GitHub repository.
