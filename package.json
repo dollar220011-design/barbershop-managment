@@ -1,43 +1,53 @@
 {
-  "name": "barbershop-management-pc",
-  "version": "1.0.1",
-  "description": "Barber Shop Management - Windows desktop app",
-  "main": "main.js",
-  "author": "Barber Shop Management",
-  "license": "MIT",
-  "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder --win"
-  },
-  "devDependencies": {
-    "electron": "^37.2.6",
-    "electron-builder": "^26.0.12"
-  },
-  "build": {
-    "appId": "com.barbershop.management",
-    "productName": "Barber Shop Management",
-    "directories": {
-      "output": "release"
-    },
-    "files": [
-      "main.js",
-      "preload.js",
-      "src/**/*",
-      "package.json"
-    ],
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": ["x64"]
-        }
-      ]
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
-    }
-  }
+"name": "barbershop-management-pc",
+"version": "1.0.2",
+"description": "Barber Shop Management - Windows desktop app",
+"main": "main.js",
+"author": "Barber Shop Management",
+"license": "MIT",
+"scripts": {
+"start": "electron .",
+"build": "vite build",
+"dist": "npm run build && electron-builder --win"
+},
+"dependencies": {
+"lucide-react": "^0.468.0",
+"react": "^18.3.1",
+"react-dom": "^18.3.1"
+},
+"devDependencies": {
+"@vitejs/plugin-react": "^4.3.4",
+"electron": "^37.2.6",
+"electron-builder": "^26.0.12",
+"vite": "^6.0.7"
+},
+"build": {
+"appId": "com.barbershop.management",
+"productName": "Barber Shop Management",
+"directories": {
+"output": "release"
+},
+"files": [
+"main.js",
+"preload.js",
+"dist/**/*",
+"package.json"
+],
+"win": {
+"target": [
+{
+"target": "nsis",
+"arch": [
+"x64"
+]
+}
+]
+},
+"nsis": {
+"oneClick": false,
+"allowToChangeInstallationDirectory": true,
+"createDesktopShortcut": true,
+"createStartMenuShortcut": true
+}
+}
 }
